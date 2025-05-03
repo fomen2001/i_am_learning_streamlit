@@ -41,3 +41,17 @@ fig2 = px.scatter(
     title=str(var_y) + " Vs " + str(var_x)
 )
 st.plotly_chart(fig2)
+
+######### seaborn et matplotlib######
+airbnb = pd.read_csv("new_york.csv")
+st.subheader("seaborn")
+fig_sb, ax_sb = plt.subplots()
+ax_sb = sns.histplot(airbnb["number_of_reviews"])
+plt.xlabel("Nombre de jours d'occupation de l'appartement")
+st.pyplot(fig_sb)
+
+st.subheader("matplotlib")
+fig_mt, ax_mt = plt.subplots()
+ax_mt = sns.histplot(airbnb["number_of_reviews"])
+plt.xlabel("Nombre de jours d'occupation de l'appartement")
+st.pyplot(fig_mt)
